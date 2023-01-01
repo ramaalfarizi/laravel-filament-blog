@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Resources\CategoryResource\RelationManagers\PostsRelationManager as RelationManagersPostsRelationManager;
 use Closure;
 use App\Models\Tag;
 use Filament\Forms;
@@ -17,6 +18,7 @@ use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\TagResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\TagResource\RelationManagers;
+use App\Filament\Resources\TagResource\RelationManagers\PostsRelationManager;
 
 class TagResource extends Resource
 {
@@ -59,7 +61,7 @@ class TagResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagersPostsRelationManager::class
         ];
     }
 
